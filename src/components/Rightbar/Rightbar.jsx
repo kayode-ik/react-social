@@ -1,6 +1,8 @@
 import React from 'react'
 import './Rightbar.css'
 // import Online from "../online/Online";
+import {Users} from "../../dummyData"
+import Online from './Online/Online'
 
 function Rightbar() {
     return (
@@ -15,76 +17,9 @@ function Rightbar() {
                 <img className="rightbarAd" src="assets/ad.png" alt="" />
                 <h4 className="rightbarTitle">Online Friends</h4>
                 <ul className="rightbarFriendList">
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Sadio Mane</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Roberto Firmino</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Jordan Henderson</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Naby Keita</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Virgil Van Dijk</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Alisson Becker</span>
-                    </li>
-                    <li className="rightbarFriend">
-                        <div className="rightbarProfileImgContainer">
-                            <img 
-                            className="rightbarProfileImg" 
-                            src="assets/person/3.jpeg" 
-                            alt="" />
-                            <span className="rightbarOnline"></span>
-                        </div>
-                        <span className="rightbarUsername">Jurgen Klopp</span>
-                    </li>
+        {Users.map(u => (
+            <Online key={u.id} user={u} />
+        ))}
                 </ul>
             </div>
         </div>
